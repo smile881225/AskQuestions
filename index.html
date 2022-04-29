@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My first three.js app</title>
+    <title></title>
     <style>
         body {
             margin: 0;
@@ -46,7 +46,7 @@
                 "three": "./build/three.module.js"
             }
         }
-</script>
+    </script>
 
     <script type="module">
         import * as THREE from 'three';
@@ -190,8 +190,8 @@
 
         });
         /*--------scene.background--------*/
-        // scene.background = new THREE.Color(0xffffff);
-        
+        scene.background = new THREE.Color(0xffffff);
+
         /*--------cube--------*/
 
         const geometry = new THREE.BoxGeometry(4, 4, 4);
