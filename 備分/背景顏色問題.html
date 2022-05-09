@@ -189,8 +189,8 @@
             bloomPass.radius = Number(value);
 
         });
-        // /*--------scene.background--------*/
-        // scene.background = new THREE.Color(0xffffff);
+        /*--------scene.background--------*/
+        scene.background = new THREE.Color(0xffffff);
 
         /*--------cube--------*/
 
@@ -257,10 +257,8 @@
         function renderBloom(mask) {
 
             if (mask === true) {
-                renderer.setClearColor(0x000000); // all must be black, including background
                 scene.traverse(darkenNonBloomed);
                 bloomComposer.render();
-                renderer.setClearColor(0xffffff); // set the color you want
                 scene.traverse(restoreMaterial);
             } else {
                 camera.layers.set(BLOOM_SCENE);
