@@ -204,6 +204,14 @@
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
+         /*--------cube--------*/
+
+         const geometry1 = new THREE.BoxGeometry(4, 4, 4);
+        const material1 = new THREE.MeshBasicMaterial({ color: 0X555555 });
+        const cube1 = new THREE.Mesh(geometry1, material1);
+        scene.add(cube1);
+        cube1.position.y = 5;
+
         /*--------raycaster--------*/
         const raycaster = new THREE.Raycaster();
 
