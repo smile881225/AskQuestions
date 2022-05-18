@@ -102,9 +102,9 @@
         //加入場景
         const scene = new THREE.Scene();
 
-        /*--------相機--------*/
-        const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 1, 5000);
-        camera.position.set(0, 1000, 2000);//初始的Camera位置
+        /*--------camera--------*/
+        var camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 1, 2000);
+        camera.position.set(200, 80, 80);//camera.position
         camera.lookAt(0, 0, 0);
 
         // OrbitControls
@@ -184,7 +184,7 @@
                 object.name = object_name;
                 object.children[0].name = object_name;
                 scene.add(object);
-                object.scale.set(0.1, 0.1, 0.1);
+                object.scale.set(0.01, 0.01, 0.01);
                 object.layers.enable(BLOOM_SCENE);
             });
             const group = scene.getObjectByName(object_name);
@@ -203,7 +203,7 @@
             OBJMoudels = objLoader.load('./models/2022-04-13-FINALTEST.obj', function (object) {
                 object.traverse(function (node) {
                     if (node instanceof THREE.Mesh) {
-                        node.castShadow = true; 
+                        node.castShadow = true;
                         node.receiveShadow = true; //default
                     }
                 })
@@ -211,7 +211,7 @@
                 object.name = "plane";
                 object.children[0].name = "plane";
                 scene.add(object);
-                object.scale.set(0.1, 0.1, 0.1);
+                object.scale.set(0.01, 0.01, 0.01);
             });
         });
 
