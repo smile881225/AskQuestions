@@ -185,7 +185,7 @@
                 object.children[0].name = object_name;
                 scene.add(object);
                 object.scale.set(0.01, 0.01, 0.01);
-                object.layers.enable(BLOOM_SCENE);
+                object.layers.enablea(BLOOM_SCENE);
             });
             const group = scene.getObjectByName(object_name);
         }
@@ -220,7 +220,8 @@
 
         const mouse = new THREE.Vector2();
         setTimeout(window.addEventListener('mousemove', onMouseMove), 1000);
-
+        setTimeout(window.addEventListener('touchstart', onMouseMove), 1000);
+        
         // onMouseMove
         function onMouseMove(event) {
 
