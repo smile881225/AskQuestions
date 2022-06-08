@@ -43,24 +43,24 @@
     <script type="importmap">
         {
             "imports": {
-                "three": "./build/three.module.js"
+                "three": "../build/three.module.js"
             }
         }
     </script>
 
     <script type="module">
         import * as THREE from 'three';
-        import { OrbitControls } from './jsm/controls/OrbitControls.js';
-        import Stats from './jsm/libs/stats.module.js';
-        import { GUI } from './jsm/libs/lil-gui.module.min.js';
-        import { EffectComposer } from './jsm/postprocessing/EffectComposer.js';
-        import { RenderPass } from './jsm/postprocessing/RenderPass.js';
-        import { UnrealBloomPass } from './jsm/postprocessing/UnrealBloomPass.js';
-        import { FBXLoader } from './Loader/FBXLoader/FBXLoader.js';
-        import { OBJLoader } from './Loader/OBJLoader.js';
-        import { MTLLoader } from './Loader/MTLLoader.js'
-        import { GLTFLoader } from "./Loader/GLTFLoader.js";
-        import { ShaderPass } from './jsm/postprocessing/ShaderPass.js';
+        import { OrbitControls } from '../jsm/controls/OrbitControls.js';
+        import Stats from '../jsm/libs/stats.module.js';
+        import { GUI } from '../jsm/libs/lil-gui.module.min.js';
+        import { EffectComposer } from '../jsm/postprocessing/EffectComposer.js';
+        import { RenderPass } from '../jsm/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from '../jsm/postprocessing/UnrealBloomPass.js';
+        import { FBXLoader } from '../Loader/FBXLoader/FBXLoader.js';
+        import { OBJLoader } from '../Loader/OBJLoader.js';
+        import { MTLLoader } from '../Loader/MTLLoader.js'
+        import { GLTFLoader } from "../Loader/GLTFLoader.js";
+        import { ShaderPass } from '../jsm/postprocessing/ShaderPass.js';
 
         const ENTIRE_SCENE = 0, BLOOM_SCENE = 1;
 
@@ -181,7 +181,7 @@
         //Material
         const loader = new THREE.TextureLoader();
         const labelMaterial = new THREE.SpriteMaterial({
-            map: loader.load('./img/moudle-lable/Wood-storage-tank/stokehold.png'),
+            map: loader.load('../img/moudle-lable/Wood-storage-tank/stokehold.png'),
             side: THREE.DoubleSide,
             transparent: true,
         });
