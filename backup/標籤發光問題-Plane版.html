@@ -173,18 +173,20 @@
         scene.add(cube);
 
         /*--------label--------*/
+        const labelGeometry = new THREE.PlaneBufferGeometry(1, 1);
+
         const canvas = makeLabelCanvas(100, 'name');
         const texture = new THREE.CanvasTexture(canvas);
         texture.wrapS = THREE.ClampToEdgeWrapping;
         texture.wrapT = THREE.ClampToEdgeWrapping;
         //Material
         const loader = new THREE.TextureLoader();
-        const labelMaterial = new THREE.SpriteMaterial({
+        const labelMaterial = new THREE.MeshBasicMaterial({
             map: loader.load('../img/moudle-lable/Wood-storage-tank/stokehold.png'),
             side: THREE.DoubleSide,
             transparent: true,
         });
-        const label = new THREE.Sprite(labelMaterial);
+        const label = new THREE.Mesh(labelGeometry, labelMaterial);
         cube.add(label);
 
         label.position.x = -5;
@@ -258,6 +260,7 @@
             }
         }
         function animate() {
+            controls.update();
             render();
             requestAnimationFrame(animate);
         };
