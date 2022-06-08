@@ -154,7 +154,6 @@
         /*--------Stats--------*/
         const stats = Stats();
         stats.showPanel(0);
-        document.body.appendChild(stats.dom);
 
         /*--------AmbientLight-1--------*/
         scene.add(new THREE.AmbientLight(0xffffff, 1));
@@ -191,9 +190,6 @@
         label.position.x = -5;
         label.position.y = 3;
         label.position.z = 0;
-        label.rotation.x = 0;
-        label.rotation.y = 0;
-        label.rotation.z = 0;
 
         const label_BaseScale_X = 0.05;
         const label_BaseScale_Y = 0.05;
@@ -201,27 +197,6 @@
         label.scale.x = canvas.width * label_BaseScale_X;
         label.scale.y = canvas.height * label_BaseScale_Y;
 
-        /*--------raycaster--------*/
-        const raycaster = new THREE.Raycaster();
-
-        const mouse = new THREE.Vector2();
-
-        window.addEventListener('mousemove', onMouseMove);
-        console.log(scene);
-        function onMouseMove(event) {
-
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-
-            raycaster.setFromCamera(mouse, camera);
-
-            const intersects = raycaster.intersectObjects(scene.children);
-            scene.children[2].layers.set(ENTIRE_SCENE);
-            if (intersects[0]) {
-                const intersects_object_name = intersects[0].object.name;
-                intersects[0].object.layers.enableAll(BLOOM_SCENE);
-            }
-        }
         //window.onresize
         window.onresize = function () {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -283,7 +258,6 @@
             }
         }
         function animate() {
-            stats.update();
             render();
             requestAnimationFrame(animate);
         };
